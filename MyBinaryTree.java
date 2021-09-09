@@ -56,4 +56,36 @@ public class MyBinaryTree<k extends Comparable<k>> {
 		System.out.print(root.key + " ");
 		printNodes(root.right);
 	}
+	
+	/**
+	 * @method to search for a key
+	 * @param key element to be searched
+	 */
+	public void search(k key)
+	{
+		this.searchTree(key,root);				
+	}
+	
+	/**
+	 * @method implement search operation
+	 * @param key element to be searched
+	 * @param current root
+	 */
+	private void searchTree(k key,MyBinaryNode<k> root)
+	{
+		if(root==null)
+		{
+			System.out.println("Key not found");
+			return;
+		}
+		int compareResult=key.compareTo(root.key);
+		if(compareResult==0) {
+			System.out.println("\n");
+			System.out.println(key+" is found");
+		}
+		else if(compareResult<0)
+			searchTree(key,root.left);
+		else
+			searchTree(key, root.right);
+	}
 }

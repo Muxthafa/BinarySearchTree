@@ -24,6 +24,7 @@ public class MyBinaryTreeTest {
 		myBinaryTree.add(67);
 		System.out.println("size of tree is "+myBinaryTree.getSize());
 		myBinaryTree.displayNodes();		//call to display node
+		myBinaryTree.search(63);			//call to search method to find key
 	}
 	
 	public static void main(String[] args) {
